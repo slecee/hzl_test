@@ -1,0 +1,14 @@
+---
+title: "learn"
+author: "hzl"
+date: "2023-04-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+主要用来学习R Markdown与R的一些常用操作

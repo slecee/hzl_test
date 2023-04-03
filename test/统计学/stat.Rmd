@@ -1,8 +1,8 @@
 ---
-title: "火山图"
+title: "stat"
 author: "hzl"
-date: "2023-03-20"
-output: pdf_document
+date: "2023-04-03"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

@@ -1,5 +1,0 @@
-
-
-awk
-grep
-sed
