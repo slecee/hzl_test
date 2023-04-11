@@ -1,0 +1,77 @@
+---
+title: "数据塑形"
+author: "hzl"
+date: "2022/4/10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 得到正确的数据结构非常重要！！！
+
+```{r }
+library(gcookbook) # 主要是加载下面数据
+library(tidyverse)
+head(heightweight)
+```
+
+### 基本数据情况
+```{r}
+typeof(heightweight) 
+str(heightweight) #几行几列，是什么数据结构
+summary(heightweight) #每一列的基本统计信息（信息较少）
+```
+### 向数据框添加列
+```{r}
+
+heightweight %>%
+  mutate(newcol = 1)
+
+# heightweight有236行，所以我们创建的新向量也应该有236个
+vec <- rep(c(1, 2, 3, 4), 59)
+
+heightweight %>%
+  mutate(newcol1 = vec)
+
+
+# base R
+# heightweight$newcol <- c(1, 2, 3, 4)
+
+```
+
+
+### 删除某一列
+```{r}
+
+heightweight %>%
+  select(-weightLb)
+
+heightweight$weightLb <- NULL
+```
+### 改列名
+```{r}
+tg_mod <- heightweight %>%
+  rename(age = ageYear)
+
+heightweight %>%
+  rename(    
+    age = ageYear, 
+    height = heightIn
+  )
+
+colnames(heightweight) <- c("sex", "Year" ,"Month" ,"heightIn")
+
+```
+
+### 重排序数据框的列
+```{r}
+# 一般来说是把QC放到最后
+
+heightweight %>% 
+    select(-contains('se'),everything()) # 含sex这一列并且在最后
+
+# heightweight %>% 
+#     select(everything(),-contains('se')) # 不含sex这一列
+```

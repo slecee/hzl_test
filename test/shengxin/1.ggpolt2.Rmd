@@ -1,0 +1,38 @@
+---
+title: "ggplot2"
+author: "hzl"
+date: "2023-04-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r}
+# install CRAN packages
+install.packages(c("tidyverse", "colorspace", "corrr",  "cowplot",
+                   "ggdark", "ggforce", "ggrepel", "ggridges", "ggsci",
+                   "ggtext", "ggthemes", "grid", "gridExtra", "patchwork",
+                   "rcartocolor", "scico", "showtext", "shiny",
+                   "plotly", "highcharter", "echarts4r"))
+
+# install from GitHub since not on CRAN
+install.packages(devtools)
+devtools::install_github("JohnCoene/charter")
+```
+
+
+
+```{r }
+
+require(tidyverse)
+chic <- read_csv("D:/project_new/test/shengxin/chicago-nmmaps.csv")
+tibble::glimpse(chic) # 数据的初步认识，几行几列什么类型的数据
+summary(chic) # 数据的基本统计信息
+head(chic, 10)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
