@@ -9,6 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+### 组间与组内差异
+### iv与DID的区别
+
 ### 描述统计与推断统计
 
 #### 1.描述统计(具有确定性):

@@ -6,11 +6,18 @@ library(ISLR)
 head(Boston)
 boxplot(Boston)
 
+# 数据处理，统计分析之后，出图优先出箱型图与小提亲图（代谢组内对样本数量有一定要求）
+# 物质组内的信息最小值最大值等等，有其他组的统计关系都可以出
 
+# 第二类图是热图与火山图
+
+# 富集与通路分析
+
+# 组学与组学之间的相关性图
 boxplot <- boxplot(Boston$crim,outline = T,log= "y")
 boxplot$stats #什么含义？？？
 # 数据除离群值之外的最小值，最大值
-
+# geom_boxplot是必须要分类的，可以想一下，基于此想一下，箱型图的意义。
 summary(Boston$crim)
 #  Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
 # 0.00632  0.08204  0.25651  3.61352  3.67708 88.97620 
